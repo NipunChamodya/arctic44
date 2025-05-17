@@ -22,3 +22,15 @@ let timer = setInterval(updateCountdown, 1000);
 function goToResponsePage() {
   window.location.href = "response.html";
 }
+
+const dotsEl = document.getElementById("dots");
+let dotCount = 0;
+
+function animateDots() {
+  dotCount = (dotCount + 1) % 4;
+  const dots = '.'.repeat(dotCount);
+  dotsEl.textContent = `Deployment${dots}`;
+}
+
+setInterval(animateDots, 500);
+
