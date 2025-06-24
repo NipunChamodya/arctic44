@@ -1,0 +1,55 @@
+.scrollerWrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #111;
+  padding: 20px 0;
+}
+
+.scroller {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 30s linear infinite;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.iconBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 40px;
+  color: #ccd6f6;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.iconBox:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.icon {
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #66ccff88;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.iconBox:hover .glow {
+  opacity: 1;
+}
